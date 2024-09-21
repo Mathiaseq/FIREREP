@@ -8,20 +8,23 @@ public class app {
         char myInitial = 'M'; //nazwa
         String myName = "Matthias"; //imię
         System.out.println(myName + " " + a + " " + shoeSize + " " + myInitial); //wyświetla wartość
-        Scanner scanner = new Scanner(System.in);
-
-System.out.println("Please enter a string: "); 
-String input = scanner.nextLine();
-System.out.println("You entered: " + input);
-
-System.out.println("Please enter a number: "); 
-String input2 = scanner.nextLine();
-int number = Integer.parseInt(input2);
-System.out.println("You entered: " + number);
-
-System.out.println("Please enter a number: "); 
-String input3 = scanner.nextLine();
-double number2 = Double.parseDouble(input3);
-System.out.println("You entered: " + number2);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Please enter a string: "); 
+            String input = scanner.nextLine();
+            System.out.println("You entered: " + input);
+            
+            System.out.println("Please enter a number: "); 
+            String input2 = scanner.nextLine();
+            int number = Integer.parseInt(input2);
+            System.out.println("You entered: " + number);
+            
+            System.out.println("Please enter a number: "); 
+            String input3 = scanner.nextLine();
+            double number2 = Double.parseDouble(input3);
+            System.out.println("You entered: " + number2);
+        } catch (NumberFormatException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
